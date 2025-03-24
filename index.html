@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Travel Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .content {
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Chat icon styling */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 9998;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .chat-icon i {
+            font-size: 24px;
+        }
+        
+        /* Chat container */
+        .chat-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 9999;
+            overflow: hidden;
+            display: none;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .chat-iframe {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+        }
+        
+        /* Animation classes */
+        .slide-in {
+            display: block;
+            animation: slideIn 0.3s forwards;
+        }
+        
+        .slide-out {
+            animation: slideOut 0.3s forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <!-- Font Awesome for the chat icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Sri Lanka Travel Guide</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h2>Discover the Beauty of Sri Lanka</h2>
+            <p>Explore the stunning beaches, ancient temples, and lush landscapes of this tropical paradise.</p>
+            <p>Need help planning your trip? Click the chat icon in the bottom right corner to speak with our AI travel assistant!</p>
+            <p><a href="embed-example.html" style="color: #4CAF50; text-decoration: underline; font-weight: bold;">View Embedding Documentation</a> - Learn how to add this chatbot to your own website.</p>
+        </div>
+    </div>
+    
+    <!-- Chat Icon -->
+    <div class="chat-icon" id="chatIcon">
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <span>Travel Sri Lanka Assistant</span>
+            <span class="close-btn" id="closeChat">&times;</span>
+        </div>
+        <iframe src="https://srilanka-c0d4bhhfegg3cvge.southeastasia-01.azurewebsites.net/" class="chat-iframe" id="chatIframe"></iframe>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatIcon = document.getElementById('chatIcon');
+            const chatContainer = document.getElementById('chatContainer');
+            const closeChat = document.getElementById('closeChat');
+            
+            // Open chat when icon is clicked
+            chatIcon.addEventListener('click', function() {
+                chatContainer.classList.remove('slide-out');
+                chatContainer.classList.add('slide-in');
+            });
+            
+            // Close chat when X is clicked
+            closeChat.addEventListener('click', function() {
+                chatContainer.classList.remove('slide-in');
+                chatContainer.classList.add('slide-out');
+                setTimeout(() => {
+                    chatContainer.style.display = 'none';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
