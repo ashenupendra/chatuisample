@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sri Lanka Travel Guide</title>
     <style>
+        :root {
+            --maroon: #8D153A;
+            --orange: #EB7400;
+            --green: #00534E;
+            --yellow: #FFBE29;
+            --white: #FFFFFF;
+            --dark: #333333;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
+            color: var(--dark);
         }
         
         .container {
@@ -19,10 +29,11 @@
         }
         
         header {
-            background-color: #4CAF50;
+            background-color: var(--maroon);
             color: white;
             padding: 20px 0;
             text-align: center;
+            border-bottom: 4px solid var(--yellow);
         }
         
         h1 {
@@ -31,7 +42,98 @@
         
         .content {
             padding: 40px 0;
+        }
+        
+        /* News section styling */
+        .news-section {
+            margin-bottom: 40px;
+        }
+        
+        .news-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--maroon);
+        }
+        
+        .news-item h3 {
+            margin-top: 0;
+            color: var(--maroon);
+        }
+        
+        .news-date {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        /* Staff section styling */
+        .staff-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .staff-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            border-top: 4px solid var(--green);
+        }
+        
+        .staff-card h3 {
+            margin-top: 0;
+            color: var(--green);
+        }
+        
+        .staff-position {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .staff-email {
+            color: var(--orange);
+        }
+        
+        /* Media releases section */
+        .media-section {
+            margin-bottom: 40px;
+        }
+        
+        .media-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-right: 4px solid var(--orange);
+        }
+        
+        .media-item a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .media-item a:hover {
+            text-decoration: underline;
+            color: var(--maroon);
+        }
+        
+        /* Footer styling */
+        footer {
+            background-color: var(--green);
+            color: white;
+            padding: 20px 0;
             text-align: center;
+            font-size: 0.9em;
+            border-top: 4px solid var(--yellow);
         }
         
         /* Chat icon styling */
@@ -42,7 +144,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background-color: #4CAF50;
+            background-color: var(--maroon);
             color: white;
             display: flex;
             justify-content: center;
@@ -51,10 +153,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             z-index: 9998;
             transition: all 0.3s ease;
+            border: 3px solid var(--yellow);
         }
         
         .chat-icon:hover {
             transform: scale(1.1);
+            background-color: var(--orange);
         }
         
         .chat-icon i {
@@ -75,10 +179,11 @@
             overflow: hidden;
             display: none;
             transition: all 0.3s ease;
+            border: 2px solid var(--yellow);
         }
         
         .chat-header {
-            background-color: #4CAF50;
+            background-color: var(--maroon);
             color: white;
             padding: 10px 15px;
             font-weight: bold;
@@ -129,6 +234,42 @@
                 opacity: 0;
             }
         }
+        
+        /* Navigation styling */
+        nav {
+            background-color: var(--green);
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            color: var(--yellow);
+        }
+        
+        /* Section headers */
+        .section-header {
+            border-bottom: 2px solid var(--maroon);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--maroon);
+        }
     </style>
     <!-- Font Awesome for the chat icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -136,18 +277,105 @@
 <body>
     <header>
         <div class="container">
-            <h1>Welcome to Sri Lanka Travel Guide</h1>
+            <h1>High Commission of Sri Lanka in Singapore</h1>
         </div>
     </header>
     
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Sri Lanka</a></li>
+            <li><a href="#">Travel Information</a></li>
+            <li><a href="#">Tourism</a></li>
+            <li><a href="#">Consular Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
         <div class="content">
-            <h2>Discover the Beauty of Sri Lanka</h2>
-            <p>Explore the stunning beaches, ancient temples, and lush landscapes of this tropical paradise.</p>
-            <p>Need help planning your trip? Click the chat icon in the bottom right corner to speak with our AI travel assistant!</p>
-            <p><a href="embed-example.html" style="color: #4CAF50; text-decoration: underline; font-weight: bold;">View Embedding Documentation</a> - Learn how to add this chatbot to your own website.</p>
+            <!-- News Section -->
+            <div class="news-section">
+                <h2 class="section-header">Latest News & Announcements</h2>
+                
+                <div class="news-item">
+                    <h3>President Anura Kumara Disanayake to undertake a State Visit to Vietnam</h3>
+                    <div class="news-date">May 2, 2025</div>
+                    <p>President Anura Kumara Disanayake will be undertaking a state visit to Vietnam to strengthen bilateral relations and discuss economic cooperation between the two nations.</p>
+                </div>
+                
+                <div class="news-item">
+                    <h3>International Workers' Day message of H.E. Anura Kumara Disanayake</h3>
+                    <div class="news-date">May 1, 2025</div>
+                    <p>The President delivered a special message commemorating International Workers' Day, highlighting the importance of labor rights and economic development in Sri Lanka.</p>
+                </div>
+                
+                <div class="news-item">
+                    <h3>Sri Lanka's food & beverage promoted at Singapore's FHA Exhibition</h3>
+                    <div class="news-date">April 25, 2025</div>
+                    <p>Sri Lankan exporters showcased their products at the Food & Hotel Asia Exhibition in Singapore, promoting the country's unique flavors and culinary traditions to international buyers.</p>
+                </div>
+            </div>
+            
+            <!-- Staff Section -->
+            <div class="staff-section">
+                <h2 class="section-header" style="width: 100%">Key Officials</h2>
+                
+                <div class="staff-card">
+                    <h3>H.E. Senarath Dissanayake</h3>
+                    <div class="staff-position">High Commissioner</div>
+                    <div class="staff-email">slhcs@lanka.com.sg</div>
+                </div>
+                
+                <div class="staff-card">
+                    <h3>Mr. U. Ahamed Razee</h3>
+                    <div class="staff-position">Minister/ Head of Chancery</div>
+                    <div class="staff-email">ahamed.razee@mfa.gov.lk</div>
+                </div>
+                
+                <div class="staff-card">
+                    <h3>Mr. Yasantha Yaddehi</h3>
+                    <div class="staff-position">Minister (Commercial)</div>
+                    <div class="staff-email">commercial@lanka.com.sg</div>
+                </div>
+            </div>
+            
+            <!-- Media Releases Section -->
+            <div class="media-section">
+                <h2 class="section-header">Media Releases</h2>
+                
+                <div class="media-item">
+                    <a href="#">New Year Message of Hon. Vijitha Hearth, Minister of Foreign Affairs, Foreign Employment and Tourism of Sri Lanka</a>
+                </div>
+                
+                <div class="media-item">
+                    <a href="#">New Year message of Hon. Dr. Harini Amarasuriya, Prime Minister of Sri Lanka</a>
+                </div>
+                
+                <div class="media-item">
+                    <a href="#">Eid-ul-Fitr congratulatory message of H.E. Anura Kumara Dissanayaka, President of Sri Lanka</a>
+                </div>
+                
+                <div class="media-item">
+                    <a href="#">Prime Minister of India Shri Narendra Modi to undertake a State visit to Sri Lanka</a>
+                </div>
+            </div>
+            
+            <!-- Original Content -->
+            <div>
+                <h2 class="section-header">Discover the Beauty of Sri Lanka</h2>
+                <p>Explore the stunning beaches, ancient temples, and lush landscapes of this tropical paradise.</p>
+                <p>Need help planning your trip? Click the chat icon in the bottom right corner to speak with our AI travel assistant!</p>
+                <p><a href="embed-example.html" style="color: var(--maroon); text-decoration: underline; font-weight: bold;">View Embedding Documentation</a> - Learn how to add this chatbot to your own website.</p>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Sri Lanka Travel Guide. All Rights Reserved.</p>
+        </div>
+    </footer>
     
     <!-- Chat Icon -->
     <div class="chat-icon" id="chatIcon">
